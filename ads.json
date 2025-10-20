@@ -1,1 +1,18 @@
-{"left":[{"type":"image","src":"https://vectorseek.com/wp-content/uploads/2023/08/Silk-Road-Logo-Vector.svg-.png","href":"#","title":"Silk Road Logo"}],"right":[{"type":"image","src":"https://lafalange.org/wp-content/uploads/2015/08/CL8_PhfW8AAvyiJ.jpg","href":"#","title":"Anuncio"}]}
+{
+  "left": [
+    {
+      "type": "image",
+      "src": "https://vectorseek.com/wp-content/uploads/2023/08/Silk-Road-Logo-Vector.svg-.png",
+      "href": "#",
+      "title": "Silk Road Logo"
+    }
+  ],
+  "right": [
+    {
+      "type": "image",
+      "src": "https://lafalange.org/wp-content/uploads/2015/08/CL8_PhfW8AAvyiJ.jpg",
+      "href": "#",
+      "title": "Anuncio"
+    }
+  ]
+}
