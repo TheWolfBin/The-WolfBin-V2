@@ -1,0 +1,26 @@
+{
+  "left": [
+    {
+      "type": "html",
+      "content": "<h6>Patrocinador</h6><p><a href='https://example.com' target='_blank' rel='noopener'>Visita nuestro sponsor</a></p>"
+    },
+    {
+      "type": "image",
+      "src": "https://via.placeholder.com/160x600?text=Ad+1",
+      "href": "https://example.com",
+      "title": "Ad 1"
+    }
+  ],
+  "right": [
+    {
+      "type": "html",
+      "content": "<h6>Donaciones</h6><p>Apóyanos en <a href='https://patreon.com' target='_blank' rel='noopener'>Patreon</a></p>"
+    },
+    {
+      "type": "link",
+      "title": "Recomendado",
+      "href": "https://github.com/TheWolfBin",
+      "content": "Explora el proyecto en GitHub"
+    }
+  ]
+}

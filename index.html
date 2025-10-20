@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The WolfBin — Paste cifrado</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/darkstrap@1.10.0/darkstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/styles/code-prettify.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">The WolfBin</a>
+      <div class="d-flex">
+        <a class="btn btn-outline-light btn-sm me-2" href="admin.html">Editar anuncios</a>
+        <button id="themeBtn" class="btn btn-outline-light btn-sm">Tema</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid py-3">
+    <div class="row gx-3">
+
+      <!-- Left ads column -->
+      <aside id="ads-left" class="col-12 col-md-2 d-none d-md-block">
+        <!-- Ads dinámicos cargados desde /ads.json -->
+      </aside>
+
+      <!-- Main content -->
+      <section class="col-12 col-md-8">
+        <div class="row">
+          <div class="col-lg-7 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Crear un paste</h5>
+                <div class="mb-2">
+                  <select id="templateSelect" class="form-select form-select-sm">
+                    <option value="bootstrap">Bootstrap 5</option>
+                    <option value="bootstrap-css">Bootstrap CSS</option>
+                    <option value="darkstrap">Darkstrap</option>
+                  </select>
+                </div>
+
+                <div class="mb-2">
+                  <textarea id="pasteContent" class="form-control" rows="12" placeholder="Pega tu texto o código aquí..."></textarea>
+                </div>
+
+                <div class="mb-2 d-flex gap-2">
+                  <input id="password" class="form-control form-control-sm" type="password" placeholder="Contraseña opcional (leer)"/>
+                  <select id="expires" class="form-select form-select-sm" style="max-width:180px">
+                    <option value="3600">1 hora</option>
+                    <option value="86400">1 día</option>
+                    <option value="604800">1 semana</option>
+                    <option value="0" selected>Para siempre</option>
+                  </select>
+                  <div class="form-check form-switch ms-2">
+                    <input class="form-check-input" type="checkbox" id="burnAfterRead">
+                    <label class="form-check-label" for="burnAfterRead">Quemar al leer</label>
+                  </div>
+                </div>
+
+                <div class="mb-2 d-flex gap-2">
+                  <input id="fileInput" type="file" class="form-control form-control-sm" />
+                  <button id="attachBtn" class="btn btn-secondary btn-sm">Adjuntar</button>
+                  <button id="encryptCreateBtn" class="btn btn-primary btn-sm ms-auto">Cifrar y crear</button>
+                </div>
+
+                <div id="createStatus" class="small text-muted"></div>
+              </div>
+            </div>
+
+            <div class="mt-3 card">
+              <div class="card-body">
+                <h6>Vista previa Markdown</h6>
+                <div id="mdPreview" class="border rounded p-2" style="min-height: 120px; background:white"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Abrir paste</h5>
+                <input id="pasteUrl" class="form-control form-control-sm mb-2" placeholder="Pega la URL compartida aquí (contiene clave si no usaste contraseña)"/>
+                <input id="readPassword" class="form-control form-control-sm mb-2" placeholder="Contraseña si aplica" />
+                <div class="d-flex gap-2">
+                  <button id="openBtn" class="btn btn-success btn-sm">Abrir</button>
+                  <button id="qrOpenBtn" class="btn btn-outline-secondary btn-sm">Leer QR</button>
+                </div>
+                <div id="openStatus" class="small text-muted mt-2"></div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-body">
+                <h6>Contenido</h6>
+                <div id="contentArea" class="border rounded p-2" style="min-height:200px; background: #fff; overflow:auto"></div>
+                <div class="mt-2 d-flex gap-2">
+                  <button id="downloadBtn" class="btn btn-outline-primary btn-sm">Descargar</button>
+                  <button id="copyBtn" class="btn btn-outline-secondary btn-sm">Copiar</button>
+                  <button id="showQRBtn" class="btn btn-outline-secondary btn-sm ms-auto">Mostrar QR</button>
+                </div>
+                <div id="qrContainer" class="mt-2"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body small text-muted">
+                Esta aplicación cifra/descifra en el navegador usando AES-256-GCM. El servidor solo almacena blobs cifrados y metadatos.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right ads column -->
+      <aside id="ads-right" class="col-12 col-md-2 d-none d-md-block">
+        <!-- Ads dinámicos cargados desde /ads.json -->
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
