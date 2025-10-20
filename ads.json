@@ -2,7 +2,7 @@
   "left": [
     {
       "type": "image",
-      "src": "https://vectorseek.com/wp-content/uploads/2023/08/Silk-Road-Logo-Vector.svg-.png",
+      "src": "https://raw.githubusercontent.com/TheWolfBin/The-WolfBin-V2/main/assets/ad-left.png",
       "href": "#",
       "title": "Silk Road Logo"
     }
@@ -10,7 +10,7 @@
   "right": [
     {
       "type": "image",
-      "src": "https://lafalange.org/wp-content/uploads/2015/08/CL8_PhfW8AAvyiJ.jpg",
+      "src": "https://raw.githubusercontent.com/TheWolfBin/The-WolfBin-V2/main/assets/ad-right.jpg",
       "href": "#",
       "title": "Anuncio"
     }
