@@ -2,16 +2,16 @@
   "left": [
     {
       "type": "image",
-      "src": "https://raw.githubusercontent.com/TheWolfBin/The-WolfBin-V2/main/assets/ad-left.png",
-      "href": "#",
+      "src": "assets/ad-left.png",
+      "href": "https://www.youtube.com/watch?v=xvFZjo5PgG0",
       "title": "Silk Road Logo"
     }
   ],
   "right": [
     {
       "type": "image",
-      "src": "https://raw.githubusercontent.com/TheWolfBin/The-WolfBin-V2/main/assets/ad-right.jpg",
-      "href": "#",
+      "src": "assets/ad-right.jpg",
+      "href": "https://www.youtube.com/watch?v=cwIaMtureF4",
       "title": "Anuncio"
     }
   ]
